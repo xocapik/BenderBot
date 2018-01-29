@@ -1,0 +1,4163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QueryMaster</name>
+    </assembly>
+    <members>
+        <member name="T:QueryMaster.EngineType">
+            <summary>
+            Specifies the type of engine used by server.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.EngineType.Source">
+            <summary>
+            Source Engine.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.EngineType.GoldSource">
+            <summary>
+            Gold Source Engine.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.QueryMasterException">
+            <summary>
+            The exception that is thrown by the QueryMaster library.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.InvalidHeaderException">
+            <summary>
+            The exception that is thrown when an invalid message header is received.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.InvalidPacketException">
+            <summary>
+            The exception that is thrown when an invalid packet is received.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.ParseException">
+            <summary>
+            The exception that is thrown when there is an error while parsing received packets.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServerException">
+            <summary>
+            Base for all GameServer Exception.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.MasterServerException">
+            <summary>
+            Base for all MasterServer Exception.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.SteamException">
+            <summary>
+            Base for all Steam Exception.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.DataObject">
+            <summary>
+            Base of all data objects in this library.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.DataObject.ToString">
+            <summary>
+            Returns Json string.
+            </summary>
+            <returns>Json string.</returns>
+        </member>
+        <member name="T:QueryMaster.Game">
+            <summary>
+            Specifies the game.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.CounterStrike">
+            <summary>
+            Counter-Strike
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Team_Fortress_Classic">
+            <summary>
+            Team Fortress Classic
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Day_Of_Defeat">
+            <summary>
+            Day Of Defeat
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Deathmatch_Classic">
+            <summary>
+            Deathmatch Classic
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Opposing_Force">
+            <summary>
+            Half-Life: Opposing Force
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Ricochet">
+            <summary>
+            Ricochet
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life">
+            <summary>
+            Half-Life
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Condition_Zero">
+            <summary>
+            Condition Zero
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.CounterStrike_1_6_dedicated_server">
+            <summary>
+            Counter-Strike 1.6 dedicated server
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Condition_Zero_Deleted_Scenes">
+            <summary>
+            Condition Zero Deleted Scenes
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_Blue_Shift">
+            <summary>
+            Half-Life: Blue Shift
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_2">
+            <summary>
+            Half-Life 2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.CounterStrike_Source">
+            <summary>
+            Counter-Strike: Source
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_Source">
+            <summary>
+            Half-Life: Source
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Day_Of_Defeat_Source">
+            <summary>
+            Day of Defeat: Source
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_2_Deathmatch">
+            <summary>
+            Half-Life 2: Deathmatch
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_2_Lost_Coast">
+            <summary>
+            Half-Life 2: Lost Coast
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_Deathmatch_Source">
+            <summary>
+            Half-Life Deathmatch: Source
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_2_Episode_One">
+            <summary>
+            Half-Life 2: Episode One
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Portal">
+            <summary>
+            Portal
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Half_Life_2_Episode_Two">
+            <summary>
+            Half-Life 2: Episode Two
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Team_Fortress_2">
+            <summary>
+            Team Fortress 2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Left_4_Dead">
+            <summary>
+            Left 4 Dead
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Left_4_Dead_2">
+            <summary>
+            Left 4 Dead 2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Dota_2">
+            <summary>
+            Dota 2 
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Portal_2">
+            <summary>
+            Portal 2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Alien_Swarm">
+            <summary>
+            Alien Swarm
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.CounterStrike_Global_Offensive">
+            <summary>
+            Counter-Strike: Global Offensive
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.SiN_Episodes_Emergence">
+            <summary>
+            SiN Episodes: Emergence
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Dark_Messiah_Of_Might_And_Magic">
+            <summary>
+            Dark Messiah of Might and Magic
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Dark_Messiah_Might_And_Magic_MultiPlayer">
+            <summary>
+            Dark Messiah Might and Magic Multi-Player
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.The_Ship">
+            <summary>
+            The Ship
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Bloody_Good_Time">
+            <summary>
+            Bloody Good Time
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Vampire_The_Masquerade_Bloodlines">
+            <summary>
+            Vampire The Masquerade - Bloodlines
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Garrys_Mod">
+            <summary>
+            Garry's Mod
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Zombie_Panic_Source">
+            <summary>
+            Zombie Panic! Source
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Age_of_Chivalry">
+            <summary>
+            Age of Chivalry
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Synergy">
+            <summary>
+            Synergy
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.D_I_P_R_I_P">
+            <summary>
+            D.I.P.R.I.P.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Eternal_Silence">
+            <summary>
+            Eternal Silence
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Pirates_Vikings_And_Knights_II">
+            <summary>
+            Pirates, Vikings, and Knights II
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Dystopia">
+            <summary>
+            Dystopia
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Insurgency_Modern_Infantry_Combat">
+            <summary>
+            Insurgency: Modern Infantry Combat
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Nuclear_Dawn">
+            <summary>
+            Nuclear Dawn
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Smashball">
+            <summary>
+            Smashball
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Insurgency">
+            <summary>
+            Insurgency
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.ARK_Survival_Evolved">
+            <summary>
+            ARK: Survival Evolved
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Sniper_Elite_V2">
+            <summary>
+            Sniper Elite V2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Sniper_Elite_3">
+            <summary>
+            Sniper Elite 3
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Arma_2">
+            <summary>
+            Arma 2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Arma_2_Operation_Arrowhead">
+            <summary>
+            Arma 2: Operation Arrowhead
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Arma_3">
+            <summary>
+            Arma 3
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Rust">
+            <summary>
+            Rust
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.H_Hour_Worlds_Elite">
+            <summary>
+            H-Hour: World's Elite
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Killing_Floor">
+            <summary>
+            Killing Floor
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Killing_Floor_2">
+            <summary>
+            Killing Floor 2
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.DayZ">
+            <summary>
+            DayZ
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Space_Engineers">
+            <summary>
+            Space Engineers
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Red_Orchestra_Ostfront">
+            <summary>
+            Red Orchestra: Ostfront 41-45
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Game.Red_Orchestra_2">
+            <summary>
+            Rising Storm/Red Orchestra 2 Multiplayer
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ExtraInfo">
+            <summary>
+            Contains extra information about server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ExtraInfo.Port">
+            <summary>
+            The server's game port number.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ExtraInfo.SteamId">
+            <summary>
+            Server's SteamID. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ExtraInfo.SpecInfo">
+            <summary>
+            Contains information on Source TV.(if it is Source TV).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ExtraInfo.Keywords">
+            <summary>
+            Tags that describe the game according to the server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ExtraInfo.GameId">
+            <summary>
+            The server's 64-bit GameID.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogFilter">
+            <summary>
+            Represents log filter.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogFilter.RegexInstance">
+            <summary>
+            Regex instance.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogFilter.FilterString">
+            <summary>
+            used to store the regex pattern.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogFilter.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the filter is enabled.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogFilter.Action">
+            <summary>
+            Gets or sets <see cref="T:QueryMaster.GameServer.LogFilterAction"/>
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogFilterCollection">
+            <summary>
+            Represents collection of logfilter.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.LogFilterCollection.LockObj">
+            <summary>
+            used to set lock on add/remove of filter.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.EnableAll">
+            <summary>
+            Enables all filters.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.EnableAll(System.Type)">
+            <summary>
+            Enables filter of specific type.
+            </summary>
+            <param name="type">Filter type.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.DisableAll">
+            <summary>
+            Disables all filters.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.DisableAll(System.Type)">
+            <summary>
+            Disables filter of specific type.
+            </summary>
+            <param name="type">Filter type.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.Add(QueryMaster.GameServer.LogFilter)">
+            <summary>
+            Adds a filter to the end of the collection.
+            </summary>
+            <param name="filter"></param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.Remove(QueryMaster.GameServer.LogFilter)">
+            <summary>
+            Removes specified filter from the collection.
+            </summary>
+            <param name="filter"></param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.Clear">
+            <summary>
+            Removes all filters from the collection.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogFilterCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the Filter collection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:QueryMaster.GameServer.ModInfo">
+            <summary>
+            Contains information about the Mod.
+            </summary>
+            <remarks>Present only in Obsolete server responses.</remarks>
+        </member>
+        <member name="P:QueryMaster.GameServer.ModInfo.Link">
+            <summary>
+            URL to mod website. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ModInfo.DownloadLink">
+            <summary>
+            URL to download the mod. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ModInfo.Version">
+            <summary>
+            Version of mod installed on server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ModInfo.Size">
+            <summary>
+            Space (in bytes) the mod takes up. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ModInfo.IsOnlyMultiPlayer">
+            <summary>
+            Indicates the type of mod.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ModInfo.IsHalfLifeDll">
+            <summary>
+            Indicates whether mod uses its own DLL.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PlayerInfo">
+            <summary>
+            Contains information of a player currently in server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerInfo.Name">
+            <summary>
+            Name of the player. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerInfo.Score">
+            <summary>
+            Player's score (usually "frags" or "kills".).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerInfo.Time">
+            <summary>
+            Time  player has been connected to the server.(returns TimeSpan instance).
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PlayerFilter">
+            <summary>
+            Represents a filter that filters by player.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.PlayerFilter.ToString">
+            <summary>
+            Creates a regex filter pattern based on name,userid,steamid and team. 
+            </summary>
+            <returns>Regex filter pattern.</returns>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerFilter.Name">
+            <summary>
+            Name of the player.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerFilter.UserId">
+            <summary>
+            User id of the player.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerFilter.SteamId">
+            <summary>
+            SteamId of the player.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerFilter.Team">
+            <summary>
+            Team in which the player is in.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogPlayerInfo">
+            <summary>
+            Contains information of a player.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogPlayerInfo.Name">
+            <summary>
+            Name of player.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogPlayerInfo.Uid">
+            <summary>
+            UId of player(Steam ID).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogPlayerInfo.WonId">
+            <summary>
+            Won Id.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogPlayerInfo.Team">
+            <summary>
+            Player's Team Name.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.RegexFilter">
+            <summary>
+            Represents a filter that filters by provided regex filter pattern.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.RegexFilter.ToString">
+            <summary>
+            Regex filter pattern.
+            </summary>
+            <returns>Regex filter pattern.</returns>
+        </member>
+        <member name="P:QueryMaster.GameServer.RegexFilter.RegexPattern">
+            <summary>
+            Regex pattern.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.Rule">
+            <summary>
+            Contains information of a server rule.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.Rule.Name">
+            <summary>
+            Name of the rule. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.Rule.Value">
+            <summary>
+            Value of the rule. 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ServerInfo">
+            <summary>
+            Contains information about the server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.IsObsolete">
+            <summary>
+            Returns true if server replies with Obsolete response format.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Address">
+            <summary>
+            Socket address of server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Protocol">
+            <summary>
+            Protocol version used by the server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Name">
+            <summary>
+            Name of the server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Map">
+            <summary>
+            Map the server has currently loaded. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Directory">
+            <summary>
+            Name of the folder containing the game files. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Description">
+            <summary>
+            Full name of the game. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Id">
+            <summary>
+            Steam Application ID of game. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Players">
+            <summary>
+            Number of players on the server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.MaxPlayers">
+            <summary>
+            Maximum number of players the server reports it can hold. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Bots">
+            <summary>
+            Number of bots on the server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.ServerType">
+            <summary>
+            Indicates the type of server.(Dedicated/Non-dedicated/Proxy)
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Environment">
+            <summary>
+            Indicates the operating system of the server.(Linux/Windows/Mac)
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.IsPrivate">
+            <summary>
+            Indicates whether the server requires a password.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.IsSecure">
+            <summary>
+            Specifies whether the server uses VAC.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.GameVersion">
+            <summary>
+            Version of the game installed on the server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.Ping">
+            <summary>
+            Round-trip delay time.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.ExtraInfo">
+            <summary>
+            Additional information provided by server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.ShipInfo">
+            <summary>
+            Valid only if the server is running The Ship. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.IsModded">
+            <summary>
+            Indicates whether the game is a mod(Halflife/HalfLifeMod).
+            </summary>
+            <remarks>Present only  in Obsolete server responses.</remarks>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerInfo.ModInfo">
+            <summary>
+            Valid only if the game is a mod(i.e. if IsModded = true).
+            </summary>
+            <remarks>Present only in Obsolete server responses.</remarks>
+        </member>
+        <member name="T:QueryMaster.GameServer.ShipInfo">
+            <summary>
+            Contains extra information about the Ship server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ShipInfo.Mode">
+            <summary>
+            Indicates the game mode.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ShipInfo.Witnesses">
+            <summary>
+            The number of witnesses necessary to have a player arrested. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ShipInfo.Duration">
+            <summary>
+            Time (in seconds) before a player is arrested while being witnessed.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.SourceTVInfo">
+            <summary>
+            Contains information on SourceTV.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.SourceTVInfo.Port">
+            <summary>
+            Spectator port number for SourceTV.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.SourceTVInfo.Name">
+            <summary>
+            Name of the spectator server for SourceTV.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.StringFilter">
+            <summary>
+            Represents a filter that filters by provided string.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.StringFilter.ToString">
+            <summary>
+            Creates a regex filter pattern based on the filter string.
+            </summary>
+            <returns>Regex filter pattern.</returns>
+        </member>
+        <member name="P:QueryMaster.GameServer.StringFilter.String">
+            <summary>
+            Filter string.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogFilterAction">
+            <summary>
+            Specifies the type of action filter should perform.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.LogFilterAction.Allow">
+            <summary>
+            Allow.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.LogFilterAction.Block">
+            <summary>
+            Block.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.GameServertype">
+            <summary>
+            Game Server's type.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameServertype.Invalid">
+            <summary>
+            Server returned an invalid value.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameServertype.Dedicated">
+            <summary>
+            Dedicated.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameServertype.NonDedicated">
+            <summary>
+            Non Dedicated.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameServertype.Listen">
+            <summary>
+            Listen.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameServertype.SourceTV">
+            <summary>
+            Source TV.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameServertype.HLTVServer">
+            <summary>
+            HLTV Server
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.GameEnvironment">
+            <summary>
+            Server's operating system.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameEnvironment.Invalid">
+            <summary>
+            Server returned an invalid value.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameEnvironment.Linux">
+            <summary>
+            Linux.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameEnvironment.Windows">
+            <summary>
+            Windows.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.GameEnvironment.Mac">
+            <summary>
+            Mac.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ShipMode">
+            <summary>
+            Ship Mode
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.Invalid">
+            <summary>
+            Server returned an invalid value.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.Hunt">
+            <summary>
+            Hunt.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.Elimination">
+            <summary>
+            Elimination.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.Duel">
+            <summary>
+            Duel.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.Deathmatch">
+            <summary>
+            Deathmatch.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.VIPTeam">
+            <summary>
+            VIP Team.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.GameServer.ShipMode.TeamElimination">
+            <summary>
+            Team Elimination.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ChatEventArgs">
+            <summary>
+            Provides data for Say and TeamSay events.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PlayerEventArgs">
+            <summary>
+            Provides data for Playervalidate,playerenteredgame and player disconnected event.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogEventArgs">
+            <summary>
+            Serves as base class for all log  EventArgs.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogEventArgs.Timestamp">
+            <summary>
+            Gets Timestamp.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerEventArgs.Player">
+            <summary>
+            Gets Player information.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ChatEventArgs.Message">
+            <summary>
+            Gets the message said by player.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.CommentReceivedEventArgs">
+            <summary>
+            Provides data for Comment Received event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.CommentReceivedEventArgs.Comment">
+            <summary>
+            Comment.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ConnectEventArgs">
+            <summary>
+            Provides data for player connect event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ConnectEventArgs.Ip">
+            <summary>
+            Gets IP-Address of client.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ConnectEventArgs.Port">
+            <summary>
+            Gets Port number of client.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.CvarEventArgs">
+            <summary>
+            Provides data for Server cvar event. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.CvarEventArgs.Cvar">
+            <summary>
+            Gets Cvar name.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.CvarEventArgs.Value">
+            <summary>
+            Gets Cvar Value.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ExceptionEventArgs">
+            <summary>
+            Provides data for Exception event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ExceptionEventArgs.Message">
+            <summary>
+            Gets received log message.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.InjureEventArgs">
+            <summary>
+            Provides data for player injured event.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.KillEventArgs">
+            <summary>
+            Provides data for player killed event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.KillEventArgs.Victim">
+            <summary>
+            Gets Victim player's info.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.KillEventArgs.Weapon">
+            <summary>
+            Gets the name of the weapon used.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.InjureEventArgs.Damage">
+            <summary>
+            Gets damage.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.KickEventArgs">
+            <summary>
+            Provides data for playerkicked event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.KickEventArgs.Kicker">
+            <summary>
+            Gets the name of the admin who kicked the player.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.KickEventArgs.Message">
+            <summary>
+            Gets the message sent as a reason for the kick.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogReceivedEventArgs">
+            <summary>
+            Provides data for log received event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogReceivedEventArgs.Message">
+            <summary>
+            Gets received log message.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogStartEventArgs">
+            <summary>
+            Provides data for log start event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogStartEventArgs.FileName">
+            <summary>
+            Gets Filename.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogStartEventArgs.Game">
+            <summary>
+            Gets Game name.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogStartEventArgs.Protocol">
+            <summary>
+            Gets Protocol version.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogStartEventArgs.Release">
+            <summary>
+            Gets Release version.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogStartEventArgs.Build">
+            <summary>
+            Gets Build version.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.MapLoadEventArgs">
+            <summary>
+            Provides data for map loaded event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.MapLoadEventArgs.MapName">
+            <summary>
+            Gets Map name.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.MapStartEventArgs">
+            <summary>
+            Provides data for map started event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.MapStartEventArgs.MapCRC">
+            <summary>
+            Get map CRC value.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.NameChangeEventArgs">
+            <summary>
+            Provides data for player name change event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.NameChangeEventArgs.NewName">
+            <summary>
+            Gets player's new name.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PlayerActionEventArgs">
+            <summary>
+            Provides data for Player action event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerActionEventArgs.Action">
+            <summary>
+            Gets the name of the action performed.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerActionEventArgs.ExtraInfo">
+            <summary>
+            Gets additional data present in the message.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PlayerOnPlayerEventArgs">
+            <summary>
+            Provides data for PlayerOnPLayerTriggered event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerOnPlayerEventArgs.Source">
+            <summary>
+            Gets info about the player who triggered an action.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerOnPlayerEventArgs.Target">
+            <summary>
+            Gets info about the player on whom the ation was triggered.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerOnPlayerEventArgs.Action">
+            <summary>
+            Gets the name of the  action performed.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PlayerScoreReportEventArgs">
+            <summary>
+            Provides data for PlayerScoreReport event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerScoreReportEventArgs.Score">
+            <summary>
+            Gets player score.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PlayerScoreReportEventArgs.ExtraInfo">
+            <summary>
+            Gets the additional data present in the message.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.PrivateChatEventArgs">
+            <summary>
+            Provides data for PrivateChat event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PrivateChatEventArgs.Sender">
+            <summary>
+            Gets Sender Player's info.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PrivateChatEventArgs.Receiver">
+            <summary>
+            Gets Receiver Player's info.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.PrivateChatEventArgs.Message">
+            <summary>
+            Get the message sent by sender.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.RconEventArgs">
+            <summary>
+            Provides data for rcon event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RconEventArgs.Challenge">
+            <summary>
+            Gets Challenge Id of remote client.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RconEventArgs.Password">
+            <summary>
+            Gets Password.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RconEventArgs.Command">
+            <summary>
+            Gets command sent by remote client.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RconEventArgs.Ip">
+            <summary>
+            Gets IP-Address of client.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RconEventArgs.Port">
+            <summary>
+            Gets Port number of client.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RconEventArgs.IsValid">
+            <summary>
+            Returns true if password sent is valid.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.RoleSelectionEventArgs">
+            <summary>
+            Provides data for role selection event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.RoleSelectionEventArgs.Role">
+            <summary>
+            Gets the role name.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ServerNameEventArgs">
+            <summary>
+            Provides data for servername event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerNameEventArgs.Name">
+            <summary>
+            Gets name of server.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.ServerSayEventArgs">
+            <summary>
+            Provides data for server say event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.ServerSayEventArgs.Message">
+            <summary>
+            Gets the message said by server.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.SuicideEventArgs">
+            <summary>
+            Provides data for suicide event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.SuicideEventArgs.Weapon">
+            <summary>
+            Gets the weapon name.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.TeamActionEventArgs">
+            <summary>
+            Provides data for team action event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamActionEventArgs.Team">
+            <summary>
+            Gets the name of the team who triggered an action.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamActionEventArgs.Action">
+            <summary>
+            Gets the name of the action performed.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.TeamAllianceEventArgs">
+            <summary>
+            Provides data for TeamAlliance event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamAllianceEventArgs.Team1">
+            <summary>
+            Gets the name of 1st team.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamAllianceEventArgs.Team2">
+            <summary>
+            Gets the name of 2nd team.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.TeamScoreReportEventArgs">
+            <summary>
+            Provides data for TeamScoreReport event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamScoreReportEventArgs.Team">
+            <summary>
+            Gets the name of team.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamScoreReportEventArgs.Score">
+            <summary>
+            Gets the score of team.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamScoreReportEventArgs.PlayerCount">
+            <summary>
+            Gets the player count.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamScoreReportEventArgs.ExtraInfo">
+            <summary>
+            Gets the additional data present in the message.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.TeamSelectionEventArgs">
+            <summary>
+            Provides data for team selection event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.TeamSelectionEventArgs.Team">
+            <summary>
+            Gets the team name.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.WeaponEventArgs">
+            <summary>
+            Provides data for WeaponSelect and WeaponAcquired event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.WeaponEventArgs.Weapon">
+            <summary>
+            Gets name of weapon.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.WorldActionEventArgs">
+            <summary>
+            Provides data for WorldAction event.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.WorldActionEventArgs.Action">
+            <summary>
+            Gets the name of the action performed.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.Server">
+            <summary>
+            Represents the connected server.Provides methods to query,listen to server logs and control the server.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.QueryMasterBase">
+            <summary>
+            Provides clean up code.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.QueryMasterBase.Dispose(System.Boolean)">
+            <summary>
+            Disposes all the resources used by this instance.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:QueryMaster.QueryMasterBase.ThrowIfDisposed">
+            <summary>
+            Throw <see cref="T:System.ObjectDisposedException"/> if this instance is already disposed.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.QueryMasterBase.Dispose">
+            <summary>
+            Disposes all the resources used by this instance.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.QueryMasterBase.IsDisposed">
+            <summary>
+            To check whether dispose method was called before.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.GetInfo(QueryMaster.AttemptCallback)">
+            <summary>
+            Retrieves information about the server.
+            </summary>
+            <param name="callback">Called on every attempt made to connect to server(max. attempts = Retries + 1).</param>
+            <returns>Instance of ServerInfo.</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.GetPlayers(QueryMaster.AttemptCallback)">
+            <summary>
+            Retrieves information about the players currently on the server.
+            </summary>
+            <param name="callback">called on every attempt made to connect to server(max. attempts = Retries + 1).</param>
+            <returns>Collection of <see cref="T:QueryMaster.GameServer.PlayerInfo"/> instances.</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.GetRules(QueryMaster.AttemptCallback)">
+            <summary>
+            Retrieves server rules.
+            </summary>
+            <param name="callback">called on every attempt made to connect to server(max. attempts = <see cref="P:QueryMaster.ConnectionInfo.Retries"/> + 1).</param>
+            <returns>Collection of <see cref="T:QueryMaster.GameServer.Rule"/> instances.</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.GetLogs(System.Int32)">
+            <summary>
+            Listen to server logs.
+            </summary>
+            <param name="port">Local port.</param>
+            <returns>Instance of <see cref="T:QueryMaster.GameServer.Logs"/> class.</returns>
+            <remarks>Receiver's socket address must be added to server's logaddress list before listening.</remarks>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.GetControl(System.String)">
+            <summary>
+            Gets valid rcon instance that can be used to send rcon commands to server..
+            </summary>
+            <param name="pass">Rcon password of server.</param>
+            <returns>true if server accepted rcon password.</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.Ping">
+            <summary>
+            Gets round-trip delay time.
+            </summary>
+            <returns>Elapsed milliseconds(-1 if server is not responding).</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.Server.Dispose(System.Boolean)">
+            <summary>
+            Disposes all the resources used by this instance.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="P:QueryMaster.GameServer.Server.EndPoint">
+            <summary>
+            Server Endpoint.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.Server.Rcon">
+            <summary>
+            Provides method(s) to perform admin level operations.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.Server.IsObsolete">
+            <summary>
+            Returns true if server replies only to half life protocol messages.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.Server.SendTimeout">
+            <summary>
+            Gets or sets Socket's SendTimeout Property.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.GameServer.Server.ReceiveTimeout">
+            <summary>
+            Gets or sets Socket's ReceiveTimeout.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogEvents">
+            <summary>
+            Provides mechanism to subscribe and filter logged events.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Initializes LogEvents.
+            </summary>
+            <param name="endPoint">server EndPoint.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.ProcessLog(System.String)">
+            <summary>
+            Processes received log messages.
+            </summary>
+            <param name="logLine"></param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.Dispose(System.Boolean)">
+            <summary>
+            Disposes all the resources used by this instance.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnCommentReceive(System.DateTime,System.String)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.CommentReceived"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.CommentReceived"/> event was fired.</param>
+            <param name="message">Comment line.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnLogReceive(System.DateTime,System.String)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.LogReceived"/> event.
+            </summary>
+            <param name="timestamp">Time at which log message was received.</param>
+            <param name="message">Received log line.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnCvarStart(System.DateTime)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.CvarStartMsg"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.CvarStartMsg"/> event was fired.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnServerCvar(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.ServerCvar"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.ServerCvar"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.ServerCvar"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnCvarEnd(System.DateTime)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.CvarEndMsg"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.CvarEndMsg"/> event was fired.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnLogFileStart(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.LogFileStarted"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.LogFileStarted"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.LogFileStarted"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnLogFileClose(System.DateTime)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.LogFileClosed"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.LogFileClosed"/> event was fired.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnMapLoading(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.MapLoaded"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.MapLoaded"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.MapLoaded"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnMapStart(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.MapStarted"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.MapStarted"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.MapStarted"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnRconMsg(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.RconMsg"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.RconMsg"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.RconMsg"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnserverName(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.ServerName"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.ServerName"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.ServerName"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnServerSay(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.ServerSay"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.ServerSay"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.ServerSay"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnConnection(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerConnected"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerConnected"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerConnected"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnValidation(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerValidated"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerValidated"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerValidated"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnEnterGame(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerEnteredGame"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerEnteredGame"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerEnteredGame"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnDisconnection(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerDisconnected"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerDisconnected"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerDisconnected"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnKick(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerKicked"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerKicked"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerKicked"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnSuicide(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSuicided"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSuicided"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSuicided"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnTeamSelection(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerJoinedTeam"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerJoinedTeam"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerJoinedTeam"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnRoleSelection(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerChangedRole"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerChangedRole"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerChangedRole"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnNameChange(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerChangedName"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerChangedName"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerChangedName"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnKill(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerKilled"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerKilled"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerKilled"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnInjure(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerInjured"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerInjured"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerInjured"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnPlayer_PlayerAction(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerOnPLayerTriggered"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerOnPLayerTriggered"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerOnPLayerTriggered"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnPlayerAction(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerTriggered"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerTriggered"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerTriggered"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnTeamAction(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.TeamTriggered"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.TeamTriggered"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.TeamTriggered"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnWorldAction(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.WorldTriggered"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.WorldTriggered"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.WorldTriggered"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnSay(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.Say"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.Say"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.Say"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnTeamSay(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.TeamSay"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.TeamSay"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.TeamSay"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnTeamAlliance(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.TeamAlliance"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.TeamAlliance"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.TeamAlliance"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnTeamScoreReport(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.TeamScoreReport"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.TeamScoreReport"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.TeamScoreReport"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnPrivateChat(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PrivateChat"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PrivateChat"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PrivateChat"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnPlayerScoreReport(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerScoreReport"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerScoreReport"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerScoreReport"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnWeaponSelection(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnWeaponPickup(System.DateTime,System.String[])">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnShutdown(System.DateTime)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon"/> event was fired.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.LogEvents.OnException(System.DateTime,System.String)">
+            <summary>
+            Raises the <see cref="E:QueryMaster.GameServer.LogEvents.Exception"/> event.
+            </summary>
+            <param name="timestamp">Time at which <see cref="E:QueryMaster.GameServer.LogEvents.Exception"/> event was fired.</param>
+            <param name="info">Information about <see cref="E:QueryMaster.GameServer.LogEvents.Exception"/> event.</param>
+        </member>
+        <member name="P:QueryMaster.GameServer.LogEvents.Filters">
+            <summary>
+            Represents a collection of filters.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.CvarStartMsg">
+            <summary>
+            Occurs when Server cvar starts(In TFC, if tfc_clanbattle is 1, this doesn't happen.).
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.ServerCvar">
+            <summary>
+            Occurs when someone changes a cvar over rcon.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.CvarEndMsg">
+            <summary>
+            Occurs when Server cvar ends(In TFC, if tfc_clanbattle is 0, this doesn't happen.).
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.LogFileStarted">
+            <summary>
+            Occurs when Logging to file is started.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.LogFileClosed">
+            <summary>
+            Occurs when Log file is closed.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.MapLoaded">
+            <summary>
+            Occurs when map is loaded.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.MapStarted">
+            <summary>
+            Occurs when Map starts.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.RconMsg">
+            <summary>
+            Occurs when an rcon message is sent to server.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.ServerName">
+            <summary>
+            Occurs when server name is displayed.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.ServerSay">
+            <summary>
+            Occurs when Server says.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerConnected">
+            <summary>
+            Occurs when a player is connected.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerValidated">
+            <summary>
+            Occurs when a player is validated.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerEnteredGame">
+            <summary>
+            Occurs when a player is enters game.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerDisconnected">
+            <summary>
+            Occurs when a player is disconnected.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerKicked">
+            <summary>
+            Occurs when a player is kicked.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerSuicided">
+            <summary>
+            Occurs when a player commit suicide.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerJoinedTeam">
+            <summary>
+            Occurs when a player Join team.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerChangedRole">
+            <summary>
+            Occurs when a player change role.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerChangedName">
+            <summary>
+            Occurs when a player changes name.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerKilled">
+            <summary>
+            Occurs when a player is killed.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerInjured">
+            <summary>
+            Occurs when a player is injured.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerOnPLayerTriggered">
+            <summary>
+            Occurs when a player triggers  something on another player(in TFC this event may cover medic healings and infections, sentry gun destruction, spy uncovering.etc).
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerTriggered">
+            <summary>
+             Occurs when a player triggers an action.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.TeamTriggered">
+            <summary>
+             Occurs when a team triggers an action(eg:team winning).
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.WorldTriggered">
+            <summary>
+             Occurs when server triggers an action(eg:roundstart,game events).
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.Say">
+            <summary>
+             Occurs when a player says. 
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.TeamSay">
+            <summary>
+             Occurs when a player uses teamsay.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.TeamAlliance">
+            <summary>
+             Occurs when a team forms alliance with another team.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.TeamScoreReport">
+            <summary>
+             Occurs when Team Score Report is displayed at round end.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PrivateChat">
+            <summary>
+            Occurs when a private message is sent.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerScoreReport">
+            <summary>
+            Occurs when Player Score Report is displayed at round end.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerSelectedWeapon">
+            <summary>
+            Occurs when Player selects a weapon.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.PlayerAcquiredWeapon">
+            <summary>
+            Occurs when Player acquires a weapon.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.Shutdown">
+            <summary>
+            Occurs when server shuts down.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.Exception">
+            <summary>
+            Occurs when a log message cannot be parsed.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.LogReceived">
+            <summary>
+            Occurs when a log message is received.
+            </summary>
+        </member>
+        <member name="E:QueryMaster.GameServer.LogEvents.CommentReceived">
+            <summary>
+            Occurs when a log comment is received.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.MasterServer.BatchInfo">
+            <summary>
+            Contains information on the batch received from master server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.BatchInfo.Source">
+            <summary>
+            Master server EndPoint.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.BatchInfo.Region">
+            <summary>
+            Region.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.BatchInfo.ReceivedEndpoints">
+            <summary>
+            Received Endpoints.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.BatchInfo.IsLastBatch">
+            <summary>
+            Whether this is the last batch.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.QueryMasterCollection`1">
+            <summary>
+            Wrapper on ReadOnlyCollection that returns its json representation on calling ToString().
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:QueryMaster.QueryMasterCollection`1.#ctor(System.Collections.Generic.IList{`0})">
+            <summary>
+            Initializes QueryMasterCollection/>
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:QueryMaster.QueryMasterCollection`1.ToString">
+            <summary>
+            Returns Json string.
+            </summary>
+            <returns>Json string.</returns>
+        </member>
+        <member name="T:QueryMaster.MasterServer.Region">
+            <summary>
+            Specifies the Region.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.US_East_coast">
+            <summary>
+            US East coast 
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.US_West_coast">
+            <summary>
+            	US West coast 
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.South_America">
+            <summary>
+            South America
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.Europe">
+            <summary>
+            Europe
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.Asia">
+            <summary>
+            Asia
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.Australia">
+            <summary>
+            Australia
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.Middle_East">
+            <summary>
+            Middle East 
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.Africa">
+            <summary>
+            Africa
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.Region.Rest_of_the_world">
+            <summary>
+            Rest of the world 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.MasterServer.IpFilter">
+            <summary>
+            Allows you to restrict the results to servers running a certain game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsDedicated">
+            <summary>
+            Servers running dedicated. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsSecure">
+            <summary>
+            Servers using anti-cheat technology.(eg:-VAC)
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.GameDirectory">
+            <summary>
+            Servers running the specified modification.(ex. cstrike) 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.Map">
+            <summary>
+            Servers running the specified map. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsLinux">
+            <summary>
+            Servers running on a Linux platform. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsNotEmpty">
+            <summary>
+            Servers that are not empty. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsNotFull">
+            <summary>
+            Servers that are not full. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsProxy">
+            <summary>
+            Servers that are spectator proxies. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.NAppId">
+            <summary>
+            Servers that are NOT running a game(AppId)(This was introduced to block Left 4 Dead games from the Steam Server Browser).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsNoPlayers">
+            <summary>
+            Servers that are empty. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsWhiteListed">
+            <summary>
+            Servers that are whitelisted. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.Tags">
+            <summary>
+            Servers with all of the given tag(s) in sv_tags(separated by comma). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.HiddenTagsAll">
+            <summary>
+            Servers with all of the given tag(s) in their 'hidden' tags (L4D2)(separated by comma). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.HiddenTagsAny">
+            <summary>
+            Servers with any of the given tag(s) in their 'hidden' tags (L4D2)(separated by comma). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.AppId">
+            <summary>
+            Servers that are running game that has mentioned Application Id.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.HostName">
+            <summary>
+            Servers with the mentioned hostname.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.Version">
+            <summary>
+            Servers running mentioned version.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IsUniqueIPAddress">
+            <summary>
+            Return only one server for each unique IP address matched.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.IPAddress">
+            <summary>
+            Return only servers on the specified End Point(Port is optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.ExcludeAny">
+            <summary>
+            Exclude servers that match any of the mentioned conditions(Nor filter).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.MasterServer.IpFilter.ExcludeAll">
+            <summary>
+            Exclude servers that match all of the mentioned conditions(Nand filter).
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.LogCallback">
+            <summary>
+            Encapsulates a method that has a parameter of type string which is the log message received from server.
+            Invoked when a log message is received from server.
+            </summary>
+            <param name="log">Received log message.</param>
+        </member>
+        <member name="T:QueryMaster.GameServer.Logs">
+            <summary>
+            Provides methods to listen to logs and to set up events on desired type of log message.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Logs.Start">
+            <summary>
+            Start listening to logs.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Logs.Stop">
+            <summary>
+            Stop listening to logs.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Logs.Listen(QueryMaster.GameServer.LogCallback)">
+            <summary>
+            Listen to logs sent by the server.
+            </summary>
+            <param name="callback">Called when a log message is received.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.Logs.GetEventsInstance">
+            <summary>
+            Returns an instance of <see cref="T:QueryMaster.GameServer.LogEvents"/> that provides event and filtering mechanism.
+            </summary>
+            <returns>Instance of <see cref="T:QueryMaster.GameServer.LogEvents"/> </returns>
+        </member>
+        <member name="P:QueryMaster.GameServer.Logs.IsListening">
+            <summary>
+            Gets a value that indicates whether its listening.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.MasterServer.MasterQuery">
+            <summary>
+            Provides method(s) to create MasterServer instance.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.MasterQuery.GoldSrcServerEndPoint">
+            <summary>
+            Master server for Gold Source games.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.MasterServer.MasterQuery.SourceServerEndPoint">
+            <summary>
+            Master server for  Source games.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.MasterServer.MasterQuery.GetServerInstance(System.Net.IPEndPoint,System.Int32,System.Int32,System.Int32,QueryMaster.AttemptCallback)">
+            <summary>
+            Gets the appropriate  masterserver query instance
+            </summary>
+            <param name="endPoint">Master server endpoint.</param>
+            <param name="sendTimeout">Sets Socket's SendTimeout Property.</param>
+            <param name="receiveTimeout">Sets Socket's ReceiveTimeout Property.</param>
+            <param name="retries">Number of times to retry if first attempt fails.</param>
+            <param name="attemptCallback">Called on every attempt made to fetch batch.</param>
+            <returns>Master server instance</returns>
+        </member>
+        <member name="T:QueryMaster.MasterServer.BatchReceivedCallback">
+            <summary>
+            Invoked when addressess are received from master server.
+            </summary>
+            <param name="batchInfo">Server endpoints</param>
+        </member>
+        <member name="T:QueryMaster.MasterServer.Server">
+            <summary>
+            Represents Master Server.Provides method(s) to query master server.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.MasterServer.Server.GetAddresses(QueryMaster.MasterServer.Region,QueryMaster.MasterServer.BatchReceivedCallback,QueryMaster.MasterServer.IpFilter,System.Int32,QueryMaster.ErrorCallback)">
+            <summary>
+            Starts receiving socket addresses of servers.
+            </summary>
+            <param name="region">The region of the world that you wish to find servers in.</param>
+            <param name="callback">Called when a batch of Socket addresses are received.</param>
+            <param name="filter">Used to set filter on the type of server required.</param>
+            <param name="batchCount">Number of batches to fetch.-1 would return all addressess.(1 batch = 1 udppacket = 231 addressess).</param>
+            <param name="errorCallback">Invoked in case of error.</param>
+        </member>
+        <member name="M:QueryMaster.MasterServer.Server.GetNextBatch(System.Int32,System.Boolean)">
+            <summary>
+            Provides next batch of addressess.
+            </summary>
+            <param name="batchCount">Number of batches to fetch.-1 would return all addressess.(1 batch = 1 udppacket = 231 addressess).</param>
+            <param name="refresh">Whether to clear internal state and obtain addresses from start.</param>
+        </member>
+        <member name="P:QueryMaster.MasterServer.Server.Region">
+            <summary>
+            Get region.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.GameServer.Rcon">
+            <summary>
+            Provides methods to access server using rcon password.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Rcon.Enablelogging">
+            <summary>
+            Enable logging on server.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Rcon.Disablelogging">
+            <summary>
+            Disable logging on server.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.Rcon.SendCommand(System.String,System.Boolean)">
+            <summary>
+            Send a Command to server.
+            </summary>
+            <param name="cmd">Server command.</param>
+            <param name="isMultiPacketResponse">Whether the reply could be/is larger than 1400 bytes.</param>
+            <param name="callback">Called on every attempt made to send a command.</param>
+            <returns>Reply from server in string format.</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.Rcon.AddlogAddress(System.String,System.UInt16)">
+            <summary>
+            Add a client socket to server's logaddress list.
+            </summary>
+            <param name="ip">IP-Address of client.</param>
+            <param name="port">Port number of client.</param>
+        </member>
+        <member name="M:QueryMaster.GameServer.Rcon.RemovelogAddress(System.String,System.UInt16)">
+            <summary>
+            Delete a client socket from server's logaddress list.
+            </summary>
+            <param name="ip">IP-Address of client.</param>
+            <param name="port">Port number of client.</param>
+        </member>
+        <member name="T:QueryMaster.GameServer.ServerQuery">
+            <summary>
+            Provides methods to create Server instance.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.GameServer.ServerQuery.GetServerInstance(QueryMaster.EngineType,System.String,System.UInt16,System.Nullable{System.Boolean},System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Returns an object that represents the server
+            </summary>
+            <param name="type">Base engine which game uses.</param>
+            <param name="ip">IP-Address of server.</param>
+            <param name="port">Port number of server.</param>
+            <param name="isObsolete">Obsolete Gold Source servers reply only to half life protocol.if set to true then it would use half life protocol.If set to null,then protocol is identified at runtime[Default : false].</param>
+            <param name="sendTimeout">Sets Socket's SendTimeout Property.</param>
+            <param name="receiveTimeout">Sets Socket's ReceiveTimeout.</param>
+            <param name="retries">Number of times to retry if first attempt fails.</param>
+            <param name="throwExceptions">Whether to throw any exceptions.</param>
+            <returns>Instance of server class that represents the connected server.</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.ServerQuery.GetServerInstance(QueryMaster.EngineType,System.Net.IPEndPoint,System.Nullable{System.Boolean},System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Returns an object that represents the server.
+            </summary>
+            <param name="type">Base engine which game uses.</param>
+            <param name="endPoint">Socket address of server.</param>
+            <param name="isObsolete">Obsolete Gold Source servers reply only to half life protocol.if set to true then it would use half life protocol.If set to null,then protocol is identified at runtime.</param>
+            <param name="sendTimeout">Sets Socket's SendTimeout Property.</param>
+            <param name="receiveTimeout">Sets Socket's ReceiveTimeout.</param>
+            <param name="retries">Number of times to retry if first attempt fails.</param>
+            <param name="throwExceptions">Whether to throw any exceptions.</param>
+            <returns>Instance of server class that represents the connected server</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.ServerQuery.GetServerInstance(QueryMaster.Game,System.Net.IPEndPoint,System.Nullable{System.Boolean},System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Returns an object that represents the server
+            </summary>
+            <param name="game">Name of game</param>
+            <param name="endPoint">Socket address of server</param>
+            <param name="isObsolete">Obsolete Gold Source servers reply only to half life protocol.if set to true then it would use half life protocol.If set to null,then protocol is identified at runtime.</param>
+            <param name="sendTimeout">Sets Socket's SendTimeout Property.</param>
+            <param name="receiveTimeout">Sets Socket's ReceiveTimeout.</param>
+            <param name="retries">Number of times to retry if first attempt fails.</param>
+            <param name="throwExceptions">Whether to throw any exceptions.</param>
+            <returns>Instance of server class that represents the connected server</returns>
+        </member>
+        <member name="M:QueryMaster.GameServer.ServerQuery.GetServerInstance(QueryMaster.Game,System.String,System.UInt16,System.Nullable{System.Boolean},System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Returns an object that represents the server
+            </summary>
+            <param name="game">Name of game</param>
+            <param name="ip">IP-Address of server</param>
+            <param name="port">Port number of server</param>
+            <param name="isObsolete">Obsolete Gold Source servers reply only to half life protocol.if set to true then it would use half life protocol.If set to null,then protocol is identified at runtime.</param>
+            <param name="sendTimeout">Sets Socket's SendTimeout Property.</param>
+            <param name="receiveTimeout">Sets Socket's ReceiveTimeout.</param>
+            <param name="retries">Number of times to retry if first attempt fails.</param>
+            <param name="throwExceptions">Whether to throw any exceptions.</param>
+            <returns>Instance of server class that represents the connected server</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.GetBadgesResponse">
+            <summary>
+            Contains response of GetBadges method.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.SteamResponse">
+            <summary>
+            Base of all Steam web api method responses.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.SteamResponse.GetRawResponse(QueryMaster.Steam.Format)">
+            <summary>
+            Gets response in json/xml/vdf format.
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamResponse.RequestUrl">
+            <summary>
+            Request Url.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamResponse.IsSuccess">
+            <summary>
+            true if parsing was successful; otherwise, false.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.Id">
+            <summary>
+            Id.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.AppId">
+            <summary>
+            Application Id of the game(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.Level">
+            <summary>
+            Level.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.CompletionTime">
+            <summary>
+            The date/time when the steam user acquired the badge.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.Xp">
+            <summary>
+            The experience this badge is worth, contributing toward the steam account's player_xp. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.Scarcity">
+            <summary>
+            The amount of people who has this badge. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.CommunityItemId">
+            <summary>
+            Provided if the badge relates to an app (trading cards)(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseBadge.BorderColor">
+            <summary>
+            Provided if the badge relates to an app (trading cards)(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseResponse.Badges">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetBadgesResponseBadge"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseResponse.PlayerXp">
+            <summary>
+            Player Xp.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseResponse.PlayerLevel">
+            <summary>
+            Player level.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseResponse.PlayerXpNeededToLevelUp">
+            <summary>
+            Amount of hp needed to level up.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetBadgesResponseResponse.PlayerXpNeededCurrentLevel">
+            <summary>
+            Amount of hp needed to complete current level.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetCommunityBadgeProgressResponse">
+            <summary>
+            Contains response of GetCommunityBadgeProgress method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCommunityBadgeProgressResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCommunityBadgeProgressResponseResponse.Quests">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetCommunityBadgeProgressResponseQuest"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCommunityBadgeProgressResponseQuest.Id">
+            <summary>
+            Quest ID; no schema is currently available.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCommunityBadgeProgressResponseQuest.HasCompleted">
+            <summary>
+            Whether the steam account has completed this quest.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetOwnedGamesResponse">
+            <summary>
+            Contains response of GetOwnedGames method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseResponse.Count">
+            <summary>
+            Total number of games.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseResponse.Games">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetOwnedGamesResponseGame"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.AppId">
+            <summary>
+            Application Id of the game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.Name">
+            <summary>
+            A string containing the program's publicly facing title(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.Playtime2Weeks">
+            <summary>
+            Player's playtime in the past 2 weeks(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.PlaytimeForever">
+            <summary>
+            Player's total playtime(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.IconUrl">
+            <summary>
+            Game icon url(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.LogoUrl">
+            <summary>
+            Game logo url(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetOwnedGamesResponseGame.HasCommunityVisibleStats">
+            <summary>
+            Whether the program has stats accessible via GetUserStatsForGame and GetGlobalStatsForGame(Optional). 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetRecentlyPlayedGamesResponse">
+            <summary>
+            Contains response of GetRecentlyPlayedGames method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseResponse.Count">
+            <summary>
+            Total number of games. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseResponse.Games">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame.AppId">
+            <summary>
+            Application Id of the game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame.Name">
+            <summary>
+            Name of the game(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame.Playtime2Weeks">
+            <summary>
+            Player's playtime in the past 2 weeks(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame.PlaytimeForever">
+            <summary>
+            Player's total playtime(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame.IconUrl">
+            <summary>
+            Game icon url(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetRecentlyPlayedGamesResponseGame.LogoUrl">
+            <summary>
+            Game logo url(Optional).
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetSteamLevelResponse">
+            <summary>
+            Contains response of GetSteamLevel method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSteamLevelResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSteamLevelResponseResponse.Level">
+            <summary>
+            The steam level of the player.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.IsPlayingSharedGameResponse">
+            <summary>
+            Contains response of IsPlayingSharedGame method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.IsPlayingSharedGameResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.IsPlayingSharedGameResponseResponse.LenderSteamid">
+            <summary>
+            Lender's SteamId.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetAppListResponse">
+            <summary>
+            Contains response of GetAppList method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetAppListResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetAppListResponseApplist.Apps">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetAppListResponseApp"/> instances.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetAppListResponseApp">
+            <summary>
+            Contains application Id and Name.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetAppListResponseApp.AppId">
+            <summary>
+            An integer containing the program's ID.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetAppListResponseApp.Name">
+            <summary>
+            A string containing the program's publicly facing title.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetServersAtAddressResponse">
+            <summary>
+            Contains response of GetServersAtAddress method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseResponse.IsSuccess">
+            <summary>
+            Returns true if ip address is valid, does not mean server is functioning properly. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseResponse.Servers">
+            <summary>
+            Collection of every server from sent ip address. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.Endpoints">
+            <summary>
+            Server endpoint.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.GMSIndex">
+            <summary>
+            gmsindex.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.AppId">
+            <summary>
+            Application Id of the game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.GameDirectory">
+            <summary>
+            Game Directory.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.Region">
+            <summary>
+            Region of the server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.IsSecure">
+            <summary>
+            Indicates whether the server is secure.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.IsLan">
+            <summary>
+            Indicates whether the server is a lan game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.GamePort">
+            <summary>
+             Port number for the server.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServersAtAddressResponseServer.SpecPort">
+            <summary>
+            Spectator port.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetCMListResponse">
+            <summary>
+            Contains response of GetCMList method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCMListResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCMListResponseResponse.Servers">
+            <summary>
+            List of server end points
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCMListResponseResponse.Result">
+            <summary>
+            Result.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetCMListResponseResponse.Message">
+            <summary>
+            Message.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetGroupDetailsResponse">
+            <summary>
+            Contains response of GetGroupDetails method.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.GetGroupDetailsResponse.GetRawResponse(QueryMaster.Steam.Format)">
+            <summary>
+            Gets raw response.
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseMemberList.SteamId">
+            <summary>
+            64 bit steam id of group.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseMemberList.Details">
+            <summary>
+            Group details.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseMemberList.TotalPages">
+            <summary>
+            Total number of Pages.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseMemberList.CurrentPage">
+            <summary>
+            Current Page number.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseMemberList.StartingMember">
+            <summary>
+            64 bit steamid starting Member.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseMemberList.Members">
+            <summary>
+            Collection of 64 bit steamids of members.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.Name">
+            <summary>
+            Group Name(may contain html tags).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.URL">
+            <summary>
+            Group Url.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.Headline">
+            <summary>
+            Headline(may contain html tags).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.Summary">
+            <summary>
+            Summary(may contain html tags).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.AvatarIcon">
+            <summary>
+            Avatar icon.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.AvatarMedium">
+            <summary>
+            Avatar Medium.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.AvatarFull">
+            <summary>
+            Avatar Full.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.MemberCount">
+            <summary>
+            Total number of members.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.MembersInChat">
+            <summary>
+            Count of members in chat.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.MembersInGame">
+            <summary>
+            Count of members who are in game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGroupDetailsResponseDetails.MembersOnline">
+            <summary>
+            Count of members who are currently online.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetNewsForAppResponse">
+            <summary>
+            Contains response of GetNewsForApp method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.GId">
+            <summary>
+            The unique identifier of the news item.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.Title">
+            <summary>
+            Title of the news item. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.Url">
+            <summary>
+            Permanent link to the item.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.IsExternalUrl">
+            <summary>
+            Indicates whether the given url is from external website.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.Author">
+            <summary>
+            The author of the news item.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.Contents">
+            <summary>
+            The article body with a length equal to the given length with an appended ellipsis if it is exceeded. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.FeedLabel">
+            <summary>
+            The category label of the news item. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.Date">
+            <summary>
+             Date the item was posted.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseNewsItem.FeedName">
+            <summary>
+            An internal tag that describes the source of the news item.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseAppNews.AppId">
+            <summary>
+            The appid of the item news is fetched for.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNewsForAppResponseAppNews.NewsItems">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetNewsForAppResponseNewsItem"/> describing each news item. 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponse">
+            <summary>
+            Contains response of GetGlobalAchievementPercentagesForApp method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponseAchievement.Name">
+            <summary>
+            The name of the achievement.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponseAchievement.Percent">
+            <summary>
+            Percentage of player population that has unlocked the achievement.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponseAchievementpercentages.Achievements">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponseAchievement"/> instances.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetGlobalStatsForGameResponse">
+            <summary>
+            Contains response of GetGlobalStatsForGame method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalStatsForGameResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalStatsForGameResponseResult.Stats">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetGlobalStatsForGameResponseStat"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalStatsForGameResponseStat.Name">
+            <summary>
+            The name of the requested stat.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetGlobalStatsForGameResponseStat.Total">
+            <summary>
+            The value of the stat.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetNumberOfCurrentPlayersResponse">
+            <summary>
+            Contains response of GetNumberOfCurrentPlayers method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNumberOfCurrentPlayersResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNumberOfCurrentPlayersResponseResponse.Count">
+            <summary>
+            Count of players.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetNumberOfCurrentPlayersResponseResponse.Result">
+            <summary>
+            Result.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetPlayerAchievementsResponse">
+            <summary>
+            Contains response of GetPlayerAchievements method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponseAchievement.Achievement">
+            <summary>
+            ID of the achievement. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponseAchievement.HasAchieved">
+            <summary>
+             Indicates whether or not the achievement has been unlocked by the user. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponseAchievement.Name">
+            <summary>
+            String containing the localized title of the achievement. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponseAchievement.Description">
+            <summary>
+            String containing the localized string or requirements of the achievement.  
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponsePlayerstats.SteamID">
+            <summary>
+            The 64 bit Steam id of the user.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponsePlayerstats.GameName">
+            <summary>
+            Game Name. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponsePlayerstats.Achievements">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetPlayerAchievementsResponseAchievement"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerAchievementsResponsePlayerstats.Success">
+            <summary>
+            Indicates if the request was successful. 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetSchemaForGameResponse">
+            <summary>
+            Contains response of GetSchemaForGame method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseGame.Name">
+            <summary>
+            Steam internal (non-localized) name of game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseGame.Version">
+            <summary>
+            Steam release version number currently live on Steam. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseGame.AvailableGameStats">
+            <summary>
+            Available game stats(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAvailableGameStats.Stats">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetSchemaForGameResponseStat"/> instances(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAvailableGameStats.Achievements">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetSchemaForGameResponseAchievement"/> instances(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseStat.Name">
+            <summary>
+            API name of stat.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseStat.DefaultValue">
+            <summary>
+            Default value of stat. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseStat.DisplayName">
+            <summary>
+            Developer provided name of string. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.Name">
+            <summary>
+            API Name of achievement. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.DefaultValue">
+            <summary>
+            Always 0 (player's default state is unachieved). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.displayName">
+            <summary>
+            Display title string of achievement. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.IsHidden">
+            <summary>
+            If achievement is hidden to the user before earning achievement.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.Description">
+            <summary>
+            Display description string of achievement. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.Icon">
+            <summary>
+            Absolute URL of earned achievement icon art. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSchemaForGameResponseAchievement.IconGray">
+            <summary>
+            Absolute URL of un-earned achievement icon art. 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetUserStatsForGameResponse">
+            <summary>
+            Contains response of GetUserStatsForGame method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponsePlayerstats.SteamID">
+            <summary>
+            64 bit steam id.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponsePlayerstats.GameName">
+            <summary>
+            Game name.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponsePlayerstats.Stats">
+             <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetUserStatsForGameResponseStat"/> instances.
+             </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponsePlayerstats.Achievements">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetUserStatsForGameResponseAchievement"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponseStat.Name">
+            <summary>
+            Name of stat.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponseStat.Value">
+            <summary>
+            Value of stat.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponseAchievement.Name">
+            <summary>
+            Name of achievement.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserStatsForGameResponseAchievement.HasAchieved">
+            <summary>
+            Indicates whether or not the achievement has been unlocked by the user. 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetFriendListResponse">
+            <summary>
+            Contains response of GetFriendList method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetFriendListResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetFriendListResponseFriend.SteamId">
+            <summary>
+            The 64 bit Steam id of the friend.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetFriendListResponseFriend.Relationship">
+            <summary>
+            Role in relation to the given steamid.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetFriendListResponseFriend.FriendSince">
+            <summary>
+            The time when friend was added to the list.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetFriendListResponseFriendsList.Friends">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetFriendListResponseFriend"/> instances.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetPlayerBansResponse">
+            <summary>
+            Contains response of GetPlayerBans method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponseRootObject.Players">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetPlayerBansResponsePlayer"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.SteamId">
+            <summary>
+            Player's 64 bit steam ID.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.IsCommunityBanned">
+            <summary>
+            Indicates whether the player is banned from Community(http://steamcommunity.com/).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.IsVACBanned">
+            <summary>
+            Indicates whether the player has VAC bans on record.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.NumberOfVACBans">
+            <summary>
+            Number of bans.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.DaysSinceLastBan">
+            <summary>
+            Days since last ban.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.NumberOfGameBans">
+            <summary>
+            Number of game bans.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerBansResponsePlayer.EconomyBan">
+            <summary>
+            Player's ban status in the economy.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetPlayerSummariesResponse">
+            <summary>
+            Contains response of GetPlayerSummaries method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.SteamId">
+            <summary>
+            The user's 64 bit ID.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.CommunityVisibilityState">
+            <summary>
+            Describes the access setting of the profile.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.ProfileState">
+            <summary>
+            Indicates whether user has configured his profile.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.PersonaName">
+            <summary>
+            User's display name.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.LastLogOff">
+            <summary>
+            User's last log off time. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.ProfileUrl">
+            <summary>
+            The URL to the user's Steam Community profile. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.Avatar">
+            <summary>
+            The URL to 32x32 image.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.AvatarMedium">
+            <summary>
+            The URL to 64x64 image.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.AvatarFull">
+            <summary>
+            The URL to 184x184 image.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.PersonaState">
+            <summary>
+            The user's status.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.CommentPermission">
+            <summary>
+            If present the profile allows public comments(Optional). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.RealName">
+            <summary>
+            The user's real name(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.PrimaryClanId">
+            <summary>
+            The 64 bit ID of the user's primary group(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.TimeCreated">
+            <summary>
+            A unix timestamp of the date the profile was created(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.LocCountryCode">
+            <summary>
+            ISO 3166 code of where the user is located(Optional). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.LocStateCode">
+            <summary>
+            Variable length code representing the state the user is located in(Optional). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.LocCityId">
+            <summary>
+            An integer ID internal to Steam representing the user's city(Optional). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.GameId">
+            <summary>
+            If the user is in game this will be set to it's app ID as a string(Optional). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.GameExtraInfo">
+            <summary>
+            The title of the game.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponsePlayer.GameServerIp">
+            <summary>
+            The server URL given as an IP address and port number separated by a colon(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetPlayerSummariesResponseResponse.Players">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetPlayerSummariesResponsePlayer"/> instances.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetUserGroupListResponse">
+            <summary>
+            Contains response of GetUserGroupList method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserGroupListResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserGroupListResponseGroup.GId">
+            <summary>
+            64 bit ID number of group.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserGroupListResponseResponse.IsSuccess">
+            <summary>
+            The status of the request.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetUserGroupListResponseResponse.Groups">
+            <summary>
+            List of groups user subscribes to.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.ResolveVanityURLResponse">
+            <summary>
+            Contains response of ResolveVanityURL method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.ResolveVanityURLResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.ResolveVanityURLResponseResponse.SteamId">
+            <summary>
+            The 64 bit Steam ID the vanity URL resolves to.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.ResolveVanityURLResponseResponse.Success">
+            <summary>
+            The status of the request(1 on successful match else 42).
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetServerInfoResponse">
+            <summary>
+            Contains response of GetServerInfo method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServerInfoResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServerInfoResponseRootObject.ServerTime">
+            <summary>
+            Unix timestamp of WebAPI server. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetServerInfoResponseRootObject.ServerTimeString">
+            <summary>
+            Time string of WebAPI server.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetSupportedAPIListResponse">
+            <summary>
+            Contains response of GetSupportedAPIList method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseApilist.Interfaces">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetSupportedAPIListResponseInterface"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseInterface.Name">
+            <summary>
+            Name of Interface. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseInterface.Methods">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetSupportedAPIListResponseMethod"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseMethod.Name">
+            <summary>
+            Name of method. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseMethod.Version">
+            <summary>
+            Version of method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseMethod.HttpMethod">
+            <summary>
+            Allowed HTTP method for method (GET, POST). 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseMethod.Parameters">
+            <summary>
+            Collection of <see cref="T:QueryMaster.Steam.GetSupportedAPIListResponseParameter"/> instances.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseParameter.Name">
+            <summary>
+            Name of parameter. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseParameter.Type">
+            <summary>
+            Expected type of value. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseParameter.IsOptional">
+            <summary>
+            Is input optional for the method. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.GetSupportedAPIListResponseParameter.Description">
+            <summary>
+            API Documentation of parameter. 
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.UpToDateCheckResponse">
+            <summary>
+            Contains response of UpToDateCheck method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.UpToDateCheckResponse.ParsedResponse">
+            <summary>
+            Parsed response.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.UpToDateCheckResponseResponse.Success">
+            <summary>
+            Indicates whether request was successful. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.UpToDateCheckResponseResponse.IsUpToUpdate">
+            <summary>
+            Indicates whether the given version number is the most current version. 
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.UpToDateCheckResponseResponse.IsVersionListable">
+            <summary>
+            Indicates whether the given version can be listed in public changelogs.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.UpToDateCheckResponseResponse.RequiredVersion">
+            <summary>
+            Most current version of the app available(Optional).
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.UpToDateCheckResponseResponse.Message">
+            <summary>
+            Status message(Optional).
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.Format">
+            <summary>
+            Reply format.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.Format.Json">
+            <summary>
+            Json.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.Format.Xml">
+            <summary>
+            Xml.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.Format.Vdf">
+            <summary>
+            Vdf.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.GetFriendListRelationship">
+            <summary>
+            GetFriendList Relationship(used in ISteamUser.GetFriendList method).
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.GetFriendListRelationship.All">
+            <summary>
+            All.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.GetFriendListRelationship.Friend">
+            <summary>
+            Friend.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.CommunityVisibilityState">
+            <summary>
+            CommunityVisibilityState(used in ISteamUser.GetPlayerSummaries method).
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.CommunityVisibilityState.Private">
+            <summary>
+            Private.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.CommunityVisibilityState.FriendsOnly">
+            <summary>
+            FriendsOnly.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.CommunityVisibilityState.FriendsOfFriends">
+            <summary>
+            FriendsOfFriends.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.CommunityVisibilityState.UsersOnly">
+            <summary>
+            UsersOnly.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.CommunityVisibilityState.Public">
+            <summary>
+            Public.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.PersonaState">
+            <summary>
+            PersonaState(used in ISteamUser.GetPlayerSummaries method).
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.Offline">
+            <summary>
+            Offline.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.Online">
+            <summary>
+            Online.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.Busy">
+            <summary>
+            Busy.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.Away">
+            <summary>
+            Away.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.Snooze">
+            <summary>
+            Snooze.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.LookingToTrade">
+            <summary>
+            LookingToTrade.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Steam.PersonaState.LookingToPlay">
+            <summary>
+            LookingToPlay.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.InterfaceBase">
+            <summary>
+            Parent of all interfaces.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.InterfaceBase.Interface">
+            <summary>
+            Name of the interface.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.IPlayerService">
+            <summary>
+            Represents the IPlayerService interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.IPlayerService.GetRecentlyPlayedGames(System.UInt64,System.UInt32)">
+            <summary>
+            Gets information about a player's recently played games(GetRecentlyPlayedGames web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64-bit SteamID of the player.</param>
+            /// <param name="count">The number of games to return.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetRecentlyPlayedGamesResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.IPlayerService.GetOwnedGames(System.UInt64,System.Boolean,System.Boolean,System.UInt32[])">
+            <summary>
+            Return a list of games owned by the player(GetOwnedGames web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64 bit SteamID of the player.</param>
+            <param name="includeAppInfo">Whether or not to include additional details(name, icon) about each game.</param>
+            <param name="IncludeFreeGames">Whether or not to include free games.</param>
+            <param name="filters">Restricts results to contain only mentioned appids.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetOwnedGamesResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.IPlayerService.GetSteamLevel(System.UInt64)">
+            <summary>
+            Returns the Steam Level of a user(GetSteamLevel web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64 bit SteamID of the player.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetSteamLevelResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.IPlayerService.GetBadges(System.UInt64)">
+            <summary>
+            Gets badges that are owned by a specific user(GetBadges web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64 bit SteamID of the player.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetBadgesResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.IPlayerService.GetCommunityBadgeProgress(System.UInt64)">
+            <summary>
+            calls GetCommunityBadgeProgress web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64 bit SteamID of the player.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetCommunityBadgeProgressResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.IPlayerService.IsPlayingSharedGame(System.UInt64)">
+            <summary>
+            calls IsPlayingSharedGame web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64 bit SteamID of the player.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.IsPlayingSharedGameResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamApps">
+            <summary>
+            Represents the ISteamApps interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamApps.GetAppList">
+            <summary>
+            Full list of every publicly facing program in the store/library(GetAppList web api method(version 2)).
+            </summary>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetAppListResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamApps.GetServersAtAddress(System.Net.IPEndPoint)">
+            <summary>
+            Calls GetServersAtAddress web api method(version 1).
+            </summary>
+            <param name="ipEndPoint">IP EndPoint of server.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetServersAtAddressResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamApps.UpToDateCheck(System.UInt32,System.UInt32)">
+            <summary>
+            Calls UpToDateCheck web api method(version 1).
+            </summary>
+            <param name="appId">Application Id of the game</param>
+            <param name="version">The installed version of the game.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.UpToDateCheckResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamDirectory">
+            <summary>
+            Represents the ISteamDirectory interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamDirectory.GetCMList(System.UInt32,System.UInt32)">
+            <summary>
+            GetCMList web api method(version 1).
+            </summary>
+            <param name="cellId">Client's Steam cell ID</param>
+            <param name="maxCount">Max number of servers to return.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetCMListResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamGroup">
+            <summary>
+            Represents the ISteamGroup interface(not part of steam's web api).
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamGroup.GetGroupDetails(System.String,System.Int32)">
+            <summary>
+            Gets group details.
+            </summary>
+            <param name="groupName">Name of group.</param>
+            <param name="pageNum">Page Number.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetGroupDetailsResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamGroup.GetGroupDetails(System.UInt64,System.Int32)">
+            <summary>
+            Gets group details.
+            </summary>
+            <param name="gId">Gid of the group.</param>
+            <param name="pageNum">Page Number.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetGroupDetailsResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamNews">
+            <summary>
+            Represents the ISteamNews interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Calls GetNewsForApp web api method(version 2).
+            </summary>
+            <param name="appId">Game/item to retrieve news for. This can be any valid app ID as seen in the Steam store.</param>
+            <param name="maxLength">Max length of the contents field.</param>
+            <param name="endDate">Unix timestamp, returns posts before this date.</param>
+            <param name="count">Max number of news items to retrieve. Default: 20. </param>
+            <param name="feeds">Comma-seperated list of feed names to return news for.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetNewsForAppResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamUser">
+            <summary>
+            Represents the ISteamUser interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUser.GetFriendList(System.UInt64,QueryMaster.Steam.GetFriendListRelationship)">
+            <summary>
+            Gets the friend list (GetFriendList web api method(version 1)).
+            </summary>
+            <param name="steamId">The 64 bit ID of the user to retrieve a list for.</param>
+            <param name="relationship">Filter by a given role.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetFriendListResponse"/>.</returns>
+            <remarks>Returns the list of friends if the profile is public or there are entries for the given relationship.</remarks>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUser.GetPlayerBans(System.UInt64[])">
+            <summary>
+            Get Player ban/probation status.
+            </summary>
+            <param name="steamIds">SteamIDs</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetPlayerBansResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUser.GetPlayerSummaries(System.UInt64[])">
+            <summary>
+            Gets Users' profile data(GetPlayerSummaries web api method(version 2)).
+            </summary>
+            <param name="steamIds">SteamIDs</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetPlayerSummariesResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUser.GetUserGroupList(System.UInt64)">
+            <summary>
+            Lists Group ID(s) linked with 64 bit-ID(GetUserGroupList web api method(version 1)).
+            </summary>
+            <param name="steamId">SteamID</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetUserGroupListResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUser.ResolveVanityURL(System.String)">
+            <summary>
+            Resolve vanity URL parts to a 64 bit ID(ResolveVanityURL web api method(version 1)).
+            </summary>
+            <param name="vanityUrl">The user's vanity URL.(eg:-Vanity Url for "http://steamcommunity.com/id/abcd" will be abcd). </param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.ResolveVanityURLResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamUserStats">
+            <summary>
+            Represents the ISteamUserStats Interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)">
+            <summary>
+            Statistics showing how much of the player base have unlocked various achievements(GetGlobalAchievementPercentagesForApp web api method(version 2)).
+            </summary>
+            <param name="gameId">The ID of the game to retrieve achievement percentages for. This can be the ID of any Steamworks game with achievements available.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetGlobalAchievementPercentagesForAppResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUserStats.GetGlobalStatsForGame(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String[])">
+            <summary>
+            Gets global stats(GetGlobalStatsForGame web api method(version 1)).
+            </summary>
+            <param name="appId">Application ID</param>
+            <param name="StartDate">Start date for daily totals (unix epoch timestamp).</param>
+            <param name="EndDate">End date for daily totals (unix epoch timestamp).</param>
+            <param name="names">Names of stat to get data for.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetGlobalStatsForGameResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUserStats.GetNumberOfCurrentPlayers(System.UInt32)">
+            <summary>
+            Returns the current number of players for an app(GetNumberOfCurrentPlayers web api method(version 1)).
+            </summary>
+            <param name="appId">AppID that we're getting user count for.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetNumberOfCurrentPlayersResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUserStats.GetPlayerAchievements(System.UInt64,System.UInt32,System.String)">
+            <summary>
+            Gets game achievements(GetPlayerAchievements web api method(version 1)).
+            </summary>
+            <param name="steamId">64 bit Steam ID.</param>
+            <param name="appId">Application Id.</param>
+            <param name="language">localized language to return.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetPlayerAchievementsResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUserStats.GetSchemaForGame(System.UInt32,System.String)">
+            <summary>
+            Gets the game schema(GetSchemaForGame web api method(version 2)).
+            </summary>
+            <param name="appId">Application Id.</param>
+            <param name="language">localized language to return.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetSchemaForGameResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamUserStats.GetUserStatsForGame(System.UInt64,System.UInt32)">
+            <summary>
+            Gets user's stats for a game(GetUserStatsForGame web api method(version 2)).
+            </summary>
+            <param name="steamId">64 bit Steam ID.</param>
+            <param name="appId">Application Id.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetUserStatsForGameResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.ISteamWebApiUtil">
+            <summary>
+            Represents the ISteamWebAPIUtil interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamWebApiUtil.GetServerInfo">
+            <summary>
+            Gets WebAPI server time and checks server status(GetServerInfo web api method(version 1)).
+            </summary>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetServerInfoResponse"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Steam.ISteamWebApiUtil.GetSupportedAPIList(System.Boolean)">
+            <summary>
+            Lists all available WebAPI interfaces(GetSupportedAPIList web api method(version 1)).
+            </summary>
+            <param name="appendKey">if true then response would include all available methods and interfaces allowed for that key.</param>
+            <returns>Instance of <see cref="T:QueryMaster.Steam.GetSupportedAPIListResponse"/>.</returns>
+        </member>
+        <member name="T:QueryMaster.Steam.Parameter">
+            <summary>
+            Represents a parameter of Steam's web method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.Parameter.Name">
+            <summary>
+            Name of parameter.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.Parameter.Value">
+            <summary>
+            Valueof the parameter.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.SteamQuery">
+            <summary>
+            Represents Steam's web api interface.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.SteamQuery.#ctor(System.String)">
+            <summary>
+            Initializes Steam's web api interface. 
+            </summary>
+            <param name="apiKey">Api key.</param>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ApiKey">
+            <summary>
+            Api key.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamApps">
+            <summary>
+            Represents the ISteamApps interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamNews">
+            <summary>
+            Represents the ISteamNews interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamUser">
+            <summary>
+            Represents the ISteamUser interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamUserStats">
+            <summary>
+            Represents the ISteamUserStats interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamWebApiUtil">
+            <summary>
+            Represents the ISteamWebAPIUtil interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamDirectory">
+            <summary>
+            Represents the ISteamDirectory interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.IPlayerService">
+            <summary>
+            Represents the IPlayerService interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamQuery.ISteamGroup">
+            <summary>
+             Represents the ISteamGroup interface(not part of steam's web api).
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Steam.SteamUrl">
+            <summary>
+            Represents Steam Url.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Steam.SteamUrl.ToString">
+            <summary>
+            returns string representation of Steam Url.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamUrl.Interface">
+            <summary>
+            Name of interface.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamUrl.Method">
+            <summary>
+            Name of method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamUrl.Version">
+            <summary>
+            Version.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamUrl.Parameters">
+            <summary>
+            List of parameters.each represent a parameter to the web method.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamUrl.AppendKey">
+            <summary>
+            Whether to append Api key.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Steam.SteamUrl.Format">
+            <summary>
+            Reply format.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.ErrorCallback">
+            <summary>
+            References a method to be called when an exception occurs.
+            </summary>
+            <param name="ex">Thrown exception.</param>
+        </member>
+        <member name="T:QueryMaster.AttemptCallback">
+            <summary>
+            References a method to be called when an attempt to perform some action is made.
+            </summary>
+            <param name="attempt"></param>
+        </member>
+        <member name="T:QueryMaster.Utils.Universe">
+            <summary>
+            Steam Universe.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Universe.Invalid">
+            <summary>
+            Invalid.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Universe.Public">
+            <summary>
+            Pubic.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Universe.Beta">
+            <summary>
+            Beta.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Universe.Internal">
+            <summary>
+            Internl.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Universe.Dev">
+            <summary>
+            Dev
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Utils.AccountType">
+            <summary>
+            Steam Account type
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.Invalid">
+            <summary>
+            Invalid.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.Individual">
+            <summary>
+            Individual.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.MultiSeat">
+            <summary>
+            MultiSeat
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.GameServer">
+            <summary>
+            Game Server.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.AnonGameServer">
+            <summary>
+            Anonymous Game Server
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.Pending">
+            <summary>
+            Pending.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.ContentServer">
+            <summary>
+            Content Server.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.Clan">
+            <summary>
+            Clan.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.Chat">
+            <summary>
+            Chat.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.ConsoleUser">
+            <summary>
+            Console user.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.AnonUser">
+            <summary>
+            Anonymous user.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.Max">
+            <summary>
+            Max.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.AccountType.P2PSuperSeeder">
+            <summary>
+            P2PSuperSeeder.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Utils.Instance">
+            <summary>
+            Steam Instance
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Instance.Invalid">
+            <summary>
+            Invalid.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Instance.All">
+            <summary>
+            All.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Instance.Desktop">
+            <summary>
+            Desktop.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Instance.Console">
+            <summary>
+            Console.
+            </summary>
+        </member>
+        <member name="F:QueryMaster.Utils.Instance.Web">
+            <summary>
+            Web.
+            </summary>
+        </member>
+        <member name="T:QueryMaster.Utils.SteamId">
+            <summary>
+            Represents Steam Id.
+            </summary>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.#ctor(System.UInt32,QueryMaster.Utils.AccountType,QueryMaster.Utils.Universe,QueryMaster.Utils.Instance)">
+            <summary>
+            Create Steam id from account id,accounttype,universe and optioanl instance.
+            </summary>
+            <param name="accountId">Account Id.</param>
+            <param name="accountType">Account Type.</param>
+            <param name="universe"> Universe.</param>
+            <param name="instance">Instance.</param>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.FromLegacyFormat(System.String)">
+            <summary>
+            Creates <see cref="T:QueryMaster.Utils.SteamId"/> instance from steam id in legacy format(STEAM_X:Y:Z).
+            </summary>
+            <param name="id">Steam id of legacy format(STEAM_X:Y:Z).</param>
+            <returns>instance of <see cref="T:QueryMaster.Utils.SteamId"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.FromSteamId3(System.String)">
+            <summary>
+            Creates <see cref="T:QueryMaster.Utils.SteamId"/> instance from steam id in legacy format('[C:U:A]' or '[C:U:A:I]').
+            </summary>
+            <param name="id">Steam id of SteamID3 format('[C:U:A]' or '[C:U:A:I]').</param>
+            <returns>instance of <see cref="T:QueryMaster.Utils.SteamId"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.FromSteamId64(System.UInt64)">
+            <summary>
+            Creates <see cref="T:QueryMaster.Utils.SteamId"/> instance from SteamID64 format steam id.
+            </summary>
+            <param name="id">64-bit steam id.</param>
+            <returns>instance of <see cref="T:QueryMaster.Utils.SteamId"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.FromCommunityUrl(System.String,System.String)">
+            <summary>
+            Creates <see cref="T:QueryMaster.Utils.SteamId"/> instance from Community Url(Profile Url) of player.
+            </summary>
+            <param name="url">Player's Url.</param>
+            <param name="webApiKey">Steam web api key.</param>
+            <returns>instance of <see cref="T:QueryMaster.Utils.SteamId"/>.</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.ToLegacyFormat">
+            <summary>
+            Converts to format : STEAM_X:Y:Z.
+            </summary>
+            <returns>Returns steam id in the format : STEAM_X:Y:Z.</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.ToSteamId3(System.Boolean)">
+            <summary>
+            Converts to its ID3 format :'[C:U:A]' or '[C:U:A:I]'
+            </summary>
+            <param name="includeInstanceId">Whether to include instance id.</param>
+            <returns>Returns steam id in ID3 format('[C:U:A]' or '[C:U:A:I]').</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.ToSteamId64">
+            <summary>
+            Converts Steam id to its 64 bit format.
+            </summary>
+            <returns>Returns steam id in 64 bit format.</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.ToCommunityUrl">
+            <summary>
+            Converts Steam id to Community Url.
+            </summary>
+            <returns>Returns player's community Url(Profile Url).</returns>
+        </member>
+        <member name="M:QueryMaster.Utils.SteamId.GetVanityUrl">
+            <summary>
+            Fetches the Vanity url.
+            </summary>
+            <returns>Vanity url.</returns>
+        </member>
+        <member name="P:QueryMaster.Utils.SteamId.Universe">
+            <summary>
+            what Steam system this Steam ID comes from.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Utils.SteamId.AccountType">
+            <summary>
+            what type of account this is.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Utils.SteamId.Instance">
+            <summary>
+            Instance.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Utils.SteamId.AccountId">
+            <summary>
+            Account Id.
+            </summary>
+        </member>
+        <member name="P:QueryMaster.Utils.SteamId.IsValid">
+            <summary>
+            Indicates whether the passed steam id is valid.
+            </summary>
+        </member>
+    </members>
+</doc>
