@@ -10,3 +10,4 @@ https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-
 
 created by Pako and used in ToyStory Tribe -113 owners- and his allies.
 
+![alt text](https://i.imgur.com/dfCPUBI.png)
