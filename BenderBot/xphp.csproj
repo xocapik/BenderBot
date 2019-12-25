@@ -111,6 +111,12 @@
   <ItemGroup>
     <Content Include="ExtrernalBin\Ionic.BZip2.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QueryMaster\QueryMaster.csproj">
+      <Project>{4ca9c894-518f-42d7-bbe2-cfdfe7a03f8a}</Project>
+      <Name>QueryMaster</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
